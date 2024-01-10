@@ -5,3 +5,6 @@ node_modules/
 .env
 project-venv
 videos/
+mobile/
+api/
+web/
