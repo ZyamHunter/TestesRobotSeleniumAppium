@@ -57,3 +57,28 @@ Instale a ferramenta `virtualenv` para criar ambientes virtuais de aprendizado:
 - Report dos testes no Slack
 
 <br/>
+
+### ---- Pré-Requisitos Testes Mobile (APP) ----
+- Instalação e Configuração: https://www.youtube.com/watch?v=W5hcHbzTjOc
+- Java jdk8, Android Studio, Java SDK, Variáveis de ambiente do sistema, webdriver.io (dependência)
+- importante: atualizar a variável de ambiente de %ANDROID_HOME%/build-tools para %ANDROID_HOME%\platform-tools
+- iniciar o device pelo AVD Manager do Android Studio ou ter um celular concectado via cabo usb e permitir a depuração ubs.
+- comandos para iniciar a ligação com o appium: appium, adb kill-server, adb start-server, adb-devices
+- videos adicionais de ajuda: https://www.youtube.com/watch?v=QYT0_qgkiCw / https://www.youtube.com/watch?v=0a5NAJjUBbA
+
+### ---- Comandos para rodar testes no APP: ----
+
+<br/>
+
+*Observação: Para executar os testes com appium é preciso antes <u>inicializar o device pelo AVD Manager</u> no Android Studio.*
+
+<br/>
+
+**Iniciar o appium**
+> npm run appium
+
+**Verificar dispositivos disponíveis no ADB**
+> adb devices
+
+**Executar teste regressivo**
+> npm run app
