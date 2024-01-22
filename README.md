@@ -1,49 +1,73 @@
 [![Standard](https://github.com/ZyamHunter/TestesRobotSeleniumAppium/actions/workflows/standard.yaml/badge.svg)](https://github.com/ZyamHunter/TestesRobotSeleniumAppium/actions/workflows/standard.yaml)
 
-# Projeto de automação Robot e Appium
-Projeto criado para rodar testes automatizados de aceitação (e2e) no front-end e no back-end, utilizando as tecnologias do Robot Framework e do Appium. Os testes devem ser capazes de serem rodados localmente e na pipeline
-
-
-# robot e appium template
-> Repositório de testes dedicados ao uso das mais variadas bibliotecas do robot framework com appium
+# Projeto de automação Robot, Selenium e Appium
+Projeto criado para rodar testes automatizados de aceitação (e2e) no front-end e no back-end, utilizando as tecnologias do Robot Framework e as bibliotecas do Selenium e do Appium. Os testes devem ser capazes de serem rodados localmente e na pipeline
 
 # Configuração do Ambiente
 
-## 1. Instalar Python 3.10
+## Instalar Python 3.10
 
 Certifique-se de ter o Python 3.10 instalado em seu sistema. Você pode baixá-lo no [site oficial do Python](https://www.python.org/).
 
-## 2. Instalar Ambiente Virtual
+## Instalar Ambiente Virtual
 
 Instale a ferramenta `virtualenv` para criar ambientes virtuais de aprendizado:
 
-- pip install virtualenv
+> pip install virtualenv
 
-## 3. Criar um ambiente virtual:
-- python -m venv project-venv
+## Criar um ambiente virtual:
+> python -m venv project-venv
 
-## 4. Se você estiver usando o PowerShell e encontrar problemas para executar scripts, talvez precise alterar a política de execução temporariamente para permitir a execução de scripts:
-- Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+## Se você estiver usando o PowerShell e encontrar problemas para executar scripts, talvez precise alterar a política de execução temporariamente para permitir a execução de scripts:
+> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
-## 5. Ativar o ambiente virtual:
-- .\project-venv\Scripts\activate
+## Ativar o ambiente virtual:
+> .\project-venv\Scripts\activate
 
-## 6. Remover cache do pip
-- pip cache remove *
+## Remover cache do pip
+> pip cache remove *
 
-## 7. Rodar os testes
-- robot -d logs ./src
+## Desativar ambiente virtual
+> deactivate
 
-## 8. Desativar ambiente virtual
-- deactivate
+## Instalar dependências do Python
+Primeiro ative o ambiente virtual para evitar erros de versão com outras bibliotecas instaladas
+> pip install -r requirements.txt
 
-## 9. Instalar Node.js:
-- https://nodejs.org/en/download
- > Ao instalar, provavelmente vários pacotes adicionais serão instalados, como chocolatery, etc.
+## Instalar nvm:
+Necessário para poder mudar a versão do Node para a usada no projeto
+> https://github.com/nvm-sh/nvm/blob/master/README.md
 
-## 10. Instalar dependências do Python
-> Primeiro ative o ambiente virtual para evitar erros de versão com outras bibliotecas instaladas
-- pip install -r requirements.txt
+## Instalar Node.js:
+Ao instalar, provavelmente vários pacotes adicionais serão instalados, como chocolatery, etc.
+> https://nodejs.org/en/download
+
+## Modificar versão padrão do node para a usada no projeto:
+> nvm use
+
+## Para instalar o Appium
+> npm i -g appium
+
+## Para verificar as dependências do appium para automação mobile
+> npm i -g appium-doctor
+
+## Instalar driver uiautomator2 para testes Android
+> appium driver install uiautomator2
+
+## Para verificar os drivers instalados do Appium
+> appium driver list
+
+## Para inspecionar os elementos do app
+Baixe o Appium Inspector, no projeto foi usado a versão 2023.8.4
+> https://github.com/appium/appium-inspector/releases
+
+## Configure o Appium Inspector
+As configurações para inspecionar no Android, devem ficar parecidas com essas:
+
+<img src="./documentation/inspector.png" alt="Appium Inspector Config" />
+
+## Lint do código
+> robotidy src
 
 <br/>
 
@@ -55,7 +79,6 @@ Instale a ferramenta `virtualenv` para criar ambientes virtuais de aprendizado:
 - Appium
 - Massa de Dados
 - Geração de Report
-- Report dos testes no Slack
 
 <br/>
 
@@ -81,5 +104,11 @@ Instale a ferramenta `virtualenv` para criar ambientes virtuais de aprendizado:
 **Verificar dispositivos disponíveis no ADB**
 > adb devices
 
-**Executar teste regressivo**
+**Para verificar os emuladores instalados**
+> emulator -list-avds
+
+**Executar teste regressivo mobile**
 > npm run app
+
+### EXTRAS
+- https://eliasnogueira.github.io/appium-workshop/
