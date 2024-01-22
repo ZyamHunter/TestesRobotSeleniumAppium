@@ -76,7 +76,7 @@ jobs:
       - name: ⚙️ Default Steps
         uses: ./.github/actions/setup-composite
       - name: 🧪 Run Mobile Robot tests
-        run:
+        run: |
           # robot -d mobile ./src/Apium/Clients/Test.robot
           echo "Rodando testes mobile"
         continue-on-error: true
@@ -103,7 +103,7 @@ jobs:
         run: |
           mv web-report web
           mv api-report api
-          mv mobile-report mobile
+          # mv mobile-report mobile
       - name: 📨 Run Curl Message To Slack
         run:
           # robot ./Helpers/Curl_Slack.robot
